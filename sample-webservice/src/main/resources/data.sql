@@ -1,0 +1,10 @@
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1001, 'Alice Johnson', '456 Elm St', 'alice.johnson@example.com', '555-5678', '1992-03-15');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1002, 'Bob Smith', '789 Oak St', 'bob.smith@example.com', '555-8765', '1985-07-22');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1003, 'Charlie Brown', '101 Pine St', 'charlie.brown@example.com', '555-2345', '1978-11-05');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1004, 'Diana Prince', '202 Maple St', 'diana.prince@example.com', '555-6789', '1990-12-30');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1005, 'Eve Adams', '303 Birch St', 'eve.adams@example.com', '555-3456', '1988-09-25');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1006, 'Frank Castle', '404 Cedar St', 'frank.castle@example.com', '555-9876', '1975-06-10');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1007, 'Grace Lee', '505 Walnut St', 'grace.lee@example.com', '555-6543', '1995-04-18');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1008, 'Henry Parker', '606 Chestnut St', 'henry.parker@example.com', '555-3210', '1982-10-29');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1009, 'Isabella Martinez', '707 Fir St', 'isabella.martinez@example.com', '555-7654', '1991-05-14');
+INSERT INTO customer (id, name, address, email, phone, birthday) VALUES (1010, 'Jack Johnson', '808 Spruce St', 'jack.johnson@example.com', '555-4321', '1987-08-09');
