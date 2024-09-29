@@ -2,10 +2,10 @@
 
 This project realate to react CRUD
 
-## Front-End
+## Back-End
 use maven to start with `spring-boot:run`
 
-## Back-End
+## Front-End
 Go inside subfolder containing react app `sample-react` using `cd sample-react`.
 Then, run the following command.
 ```
