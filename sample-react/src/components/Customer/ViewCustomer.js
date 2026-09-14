@@ -5,7 +5,7 @@ import "./Customer.css";
 const ViewCustomer = () => {
   const [customer, setCustomer] = useState([]);
   const { id } = useParams();
-  const getCustomerApi = "http://localhost:8080/customers";
+  const getCustomerApi = "/customers";
 
   useEffect(() => {
     getCustomer();

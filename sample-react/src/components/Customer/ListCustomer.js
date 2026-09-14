@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 
 const ListCustomer = () => {
-  const showCustomerApi = "http://localhost:8080/customers";
+  const showCustomerApi = "/customers";
 
   const [customer, setCustomer] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

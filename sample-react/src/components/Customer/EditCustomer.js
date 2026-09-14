@@ -9,7 +9,7 @@ const EditCustomer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
-  const getCustomerApi = "http://localhost:8080/customers";
+  const getCustomerApi = "/customers";
 
   useEffect(() => {
     getCustomer();

@@ -4,7 +4,7 @@ import Loader from '../Common/Loader';
 import './Customer.css';
 const CreateCustomer = () => {
     const navigate = useNavigate();
-    const createCustomerApi = "http://localhost:8080/customers"
+    const createCustomerApi = "/customers"
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [customer, setCustomer] = useState({

@@ -1,0 +1,37 @@
+{
+  "name": "sample-boot-react",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  // Frontend dev server + Spring Boot backend. The React app calls the
+  // backend through the dev server proxy (sample-react/package.json ->
+  // "proxy"), so the browser only ever talks to port 3000 and no URL has
+  // to be edited on Codespaces.
+  "forwardPorts": [3000, 8080],
+  "portsAttributes": {
+    "3000": { "label": "React app", "onAutoForward": "openPreview" },
+    "8080": { "label": "Customer web service", "onAutoForward": "silent" }
+  },
+
+  "containerEnv": {
+    // CRA's hot-reload websocket must go through the HTTPS-forwarded URL on
+    // port 443 in Codespaces; without this the page loads but hot reload
+    // fails with websocket errors. Local runs are unaffected (no container).
+    "WDS_SOCKET_PORT": "443",
+    // Codespaces browser tab cannot open a second localhost tab by itself;
+    // don't let CRA try (and fail) to launch a browser in the container.
+    "BROWSER": "none"
+  },
+
+  // Install frontend dependencies while the codespace is being prepared, so
+  // "npm start" works immediately in class.
+  "postCreateCommand": "cd sample-react && npm install",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}

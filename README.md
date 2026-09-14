@@ -1,15 +1,43 @@
-# Getting Started with Create React App
+# Sample: React CRUD with a Spring Boot Backend
 
-This project realate to react CRUD
+Customer management demo for week 8: a React front-end (`sample-react`)
+talking to a Spring Boot REST API (`sample-webservice`). The front-end calls
+the backend with RELATIVE URLs (e.g. `/customers`) through the React dev
+server's proxy — so the same code runs unchanged on localhost AND in a
+GitHub Codespace, with no URL editing.
 
-## Back-End
-use maven to start with `spring-boot:run`
+## Run it (localhost or Codespaces — same steps)
 
-## Front-End
-Go inside subfolder containing react app `sample-react` using `cd sample-react`.
-Then, run the following command.
+**1. Start the backend** (port 8080):
+
 ```
-npm i
+mvn spring-boot:run --file sample-webservice/pom.xml
+```
+
+**2. Start the front-end** (port 3000) in a second terminal:
+
+```
+cd sample-react
+npm install
 npm start
 ```
-Go to URL: `http://localhost:3000/`
+
+**3. Open the app**
+
+- Local: http://localhost:3000
+- Codespaces: the "React app" port (3000) pops up automatically — open it.
+  Do NOT edit any URL in the code: the dev server proxies `/customers` to
+  the backend inside the codespace.
+
+## How the proxy works
+
+`sample-react/package.json` contains:
+
+```
+"proxy": "http://localhost:8080"
+```
+
+Any request the React app makes to a path the dev server does not recognise
+(like `/customers`) is forwarded server-side to the backend. The browser only
+ever talks to port 3000 — no CORS, and no difference between localhost and a
+forwarded Codespaces URL.
