@@ -1,6 +1,16 @@
 {
   "name": "sample-boot-react",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/java:17-bookworm",
+  // Slim Java image (~1 GB) instead of universal:2 (~10 GB, not cached on
+  // Codespaces hosts, so it was pulled on every new codespace). Maven is
+  // not in the base image; the java feature installs it.
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": true
+    },
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" }
+  },
 
   // Frontend dev server + Spring Boot backend. The React app calls the
   // backend through the dev server proxy (sample-react/package.json ->
